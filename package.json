@@ -1,0 +1,29 @@
+{
+  "name": "tslint_custom_rules",
+  "version": "0.0.1",
+  "description": "a collection of custom tslint rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/op1ekun/tslint_custom_rules.git"
+  },
+  "keywords": [
+    "tslint",
+    "typescript",
+    "linter",
+    "rules"
+  ],
+  "author": "op1ekun@borntoco.de",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/op1ekun/tslint_custom_rules/issues"
+  },
+  "homepage": "https://github.com/op1ekun/tslint_custom_rules#readme",
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  }
+}
