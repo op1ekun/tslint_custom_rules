@@ -15,16 +15,16 @@ class NoDirectImportsWalker extends Lint.RuleWalker {
     public visitImportDeclaration(node: ts.ImportDeclaration) {
         const opts = this.getOptions();
         const singleImport = node.importClause.parent.getText();
-        const regExp = new RegExp(`'(.|/)+?((${opts.join('|')})/?)+'`, 'g');
-        const match = singleImport.match(regExp);
-        const nodeWidth = node.getWidth();
+        const regExp = new RegExp(`\'[./]+([./a-zA-Z]+)?((${opts.join('|')})\/?)+([a-zA-Z/.]+)?\'`);
         
         if (regExp.test(singleImport)) {
             this.addFailure(
                 this.createFailure(
-                    nodeWidth - match[0].length,
-                    nodeWidth,
+                    node.getStart(),
+                    node.getWidth(),
                     Rule.FAILURE_STRING));
+                    
+            console.log('matched import', singleImport);
         }
 
         // call the base version of this visitor to actually parse this node
